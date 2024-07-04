@@ -1,0 +1,12 @@
+---
+- name: Get Access Details
+  script:
+    cmd: device_table.py -i {{ansible_host}} -u {{username}} -p {{password}} -fp {{path}}
+    executable: /usr/bin/python3
+  when: path is defined
+
+- name: Get Access Details
+  script:
+    cmd: device_table.py -i {{ansible_host}} -u {{username}} -p {{password}}
+    executable: /usr/bin/python3
+  when: path is not defined

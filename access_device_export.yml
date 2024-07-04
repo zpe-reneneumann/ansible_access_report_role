@@ -1,0 +1,12 @@
+- hosts: all
+  gather_facts: false
+  connection: local
+  collections:
+    - zpe.nodegrid
+
+  tasks:
+      - name: Run Export
+        include_role:
+          name: access_data_export
+
+

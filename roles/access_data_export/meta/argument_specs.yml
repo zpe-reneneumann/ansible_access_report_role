@@ -1,0 +1,32 @@
+---
+argument_specs:
+  # roles/access_data_export/tasks/main.yml entry point
+  main:
+    short_description: Main entry point for the access_data_export role
+    description:
+      - This is the main entrypoint for the role.
+      - The role exports device details from a Nodegrid Access table and stores the result localy into s csv file format.
+      - The role uses the Nodegrid RESTFul API's to extract the data
+    author:
+      - Rene Neumann
+    options:
+      ansible_host:
+        type: "str"
+        required: true
+        description:
+          - "the ansible_host definition which will be used for the RESTFull API call"
+
+      username:
+        type: "str"
+        required: true
+        description: "Nodegrid username"
+
+      password:
+        type: "str"
+        required: true
+        description: "Nodegrid password"
+
+      path:
+        type: "str"
+        required: false
+        description: "File path to which the file should be exported"
